@@ -1,26 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {GlobalSearch, NavBar} from './components';
+import {navItems} from './consts';
+import {Route} from 'react-router-dom';
+import {Bookmarks, Search} from "./pages";
 
-function App() {
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <GlobalSearch />
+      <NavBar navItems={navItems} />
+      <div className='content'>
+        <Route path='/' component={Search} exact />
+        <Route path='/bookmarks' component={Bookmarks} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
