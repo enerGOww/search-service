@@ -1,9 +1,10 @@
 import {combineReducers} from 'redux';
-
 import searchReducer from './searchReducer';
+import bookmarkReducer from './bookmarkReducer';
 
 const rootReducer = combineReducers({
-  search: searchReducer
+  search: searchReducer,
+  bookmark: bookmarkReducer
 })
 
 export default rootReducer;

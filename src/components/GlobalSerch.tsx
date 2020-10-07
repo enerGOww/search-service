@@ -8,7 +8,7 @@ const GlobalSearch: React.FC = () => {
   const dispatch = useDispatch();
 
   const clickHandler = () => {
-    dispatch(changeIsLoading(true))
+    dispatch(changeIsLoading(true));
     // @ts-ignore
     const query: string = inputRef.current.value;
     fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=video&maxResults=10&key=AIzaSyCZh9uEI9UmLtr33tykfU2O-OjS44Gq1-Y`)
@@ -24,7 +24,6 @@ const GlobalSearch: React.FC = () => {
       <span className='material-icons search__icon'>search</span>
       <div className='search__form'>
         <input className='search__input' type='text' placeholder='Найти' ref={inputRef} />
-        {/*@ts-ignore*/}
         <Button clickHandler={clickHandler}>Найти</Button>
       </div>
     </div>

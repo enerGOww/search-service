@@ -25,8 +25,8 @@ const searchReducer: Reducer = (state = initialState, action: AnyAction) => {
       }
     }
     case ADD_ITEMS: {
-      const oldItems = state.items;
-      const newItems = oldItems.concat(action.payload);
+      const oldState = {...state};
+      const newItems = oldState.items.concat(action.payload);
       return {
         ...state,
         items: newItems,
