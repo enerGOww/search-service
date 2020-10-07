@@ -1,9 +1,14 @@
 import React from 'react';
 
-const Button: React.FC<{ children: string, clickHandler: () => void}> =
-  ({ children , clickHandler}) => {
+type button = {
+  children: string,
+  clickHandler: () => void,
+  className?: string
+}
+
+const Button = ({ children , clickHandler, className= ''}: button) => {
   return (
-    <button className='button' onClick={() => clickHandler()}>{children}</button>
+    <button className={`button ${className}`} onClick={() => clickHandler()}>{children}</button>
   );
 };
 

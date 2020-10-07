@@ -26,4 +26,15 @@
   &:active {
     background-color: #0f3484;
   }
+
+  &--load-more {
+    display: flex;
+    width: 250px;
+    height: 45px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 500;
+  }
 }
