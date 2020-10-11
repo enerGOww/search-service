@@ -3,7 +3,10 @@ import {SearchAction} from './actionTypes';
 
 export const rewriteItems = (items: [], currentQuery: string): SearchAction => ({
   type: REWRITE_ITEMS,
-  payload: {items, currentQuery}
+  payload: {
+    items,
+    currentQuery
+  }
 });
 
 export const addItems = (items: []): SearchAction => ({

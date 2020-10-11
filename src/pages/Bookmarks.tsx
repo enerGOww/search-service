@@ -5,8 +5,8 @@ import {RootState} from '../store/reducers';
 
 const Bookmarks: React.FC = () => {
   const {bookmarks} = useSelector(({bookmark}: RootState) => bookmark);
-  const items: any[] = [];
-  bookmarks.forEach((item: any, key: string) => items.push(<Card {...item} key={key} isBookmark={true} />))
+  const items: JSX.Element[] = [];
+  bookmarks.forEach((item, key) => items.push(<Card {...item} key={key} isBookmark={true} />))
 
   return (
     <>

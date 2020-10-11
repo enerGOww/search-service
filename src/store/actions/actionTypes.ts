@@ -6,7 +6,7 @@ import {
   REWRITE_NEXT_PAGE_TOKEN,
   CHANGE_IS_LOADING
 } from '../actionTypes';
-import {IBookmark} from '../../types';
+import {IBookmark, Item} from '../../types';
 
 
 interface IAddToBookmark {
@@ -21,12 +21,12 @@ interface IDeleteFromBookmark {
 
 interface IRewriteItems {
   type: typeof REWRITE_ITEMS,
-  payload: any
+  payload: {items: Item[], currentQuery: string}
 }
 
 interface IAddItems {
   type: typeof ADD_ITEMS,
-  payload: any[]
+  payload: Item[]
 }
 
 interface IRewriteNextPageToken {

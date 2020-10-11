@@ -1,4 +1,4 @@
-import {IBookmark} from '../../types';
+import {IBookmark, Item} from '../../types';
 
 
 export type BookmarkState = {
@@ -6,7 +6,7 @@ export type BookmarkState = {
 }
 
 export type SearchState = {
-  items: any[],
+  items: Item[],
   nextPageToken: string,
   currentQuery: string,
   isLoading: boolean

@@ -22,7 +22,7 @@ const Search: React.FC = () => {
 
   return (
     <>
-      {items !== [] && items.map((item: any) => (
+      {items !== [] && items.map((item) => (
         <Card
           key={item.id.videoId}
           id={item.id.videoId}
