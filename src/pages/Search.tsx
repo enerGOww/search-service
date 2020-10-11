@@ -2,6 +2,7 @@ import React from 'react';
 import {Card, Button, Loader} from '../components';
 import {useSelector, useDispatch} from 'react-redux';
 import {addItems, changeIsLoading, rewriteNextPageToken} from '../store/actions/searchActions';
+import {fetchByQueryAndNextPageToken} from '../api/youtubeApi';
 
 const Search: React.FC = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ const Search: React.FC = () => {
 
   const addMoreHandler = () => {
     dispatch(changeIsLoading(true));
-    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${currentQuery}&type=video&pageToken=${nextPageToken}&maxResults=10&key=AIzaSyCZh9uEI9UmLtr33tykfU2O-OjS44Gq1-Y`)
+    fetchByQueryAndNextPageToken(currentQuery, nextPageToken)
       .then((response) => response.json())
       .then((data) => {
         dispatch(rewriteNextPageToken(data.nextPageToken));

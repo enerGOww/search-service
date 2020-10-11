@@ -2,6 +2,7 @@ import React from 'react';
 import {Button} from './index';
 import {useDispatch} from 'react-redux';
 import {changeIsLoading, rewriteItems, rewriteNextPageToken} from "../store/actions/searchActions";
+import {fetchByQuery} from '../api/youtubeApi';
 
 const GlobalSearch: React.FC = () => {
   const inputRef = React.useRef(null);
@@ -11,7 +12,7 @@ const GlobalSearch: React.FC = () => {
     dispatch(changeIsLoading(true));
     // @ts-ignore
     const query: string = inputRef.current.value;
-    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=video&maxResults=10&key=AIzaSyCZh9uEI9UmLtr33tykfU2O-OjS44Gq1-Y`)
+    fetchByQuery(query)
       .then((response) => response.json())
       .then((data) => {
         dispatch(rewriteNextPageToken(data.nextPageToken))
