@@ -7,3 +7,5 @@ export const navItems: navItem[] = [
   {title: 'Результаты Поиска', linkTo: '/'},
   {title: 'Закладки', linkTo: '/bookmarks'},
 ];
+
+export const bookmarksLocalStorageKey: string = 'bookmarks';

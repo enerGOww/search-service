@@ -1,7 +1,7 @@
 import React from 'react';
-import {convertDateToNormalFormat} from "../helpers";
-import {useDispatch} from "react-redux";
-import {addToBookmark, deleteFromBookmark} from "../store/actions/bookmarkActions";
+import {convertDateToNormalFormat} from '../helpers';
+import {useDispatch} from 'react-redux';
+import {addToBookmark, deleteFromBookmark} from '../store/actions/bookmarkActions';
 
 type CardComponent = {
   id: string,
