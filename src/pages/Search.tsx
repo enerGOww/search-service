@@ -3,13 +3,12 @@ import {Card, Button, Loader} from '../components';
 import {useSelector, useDispatch} from 'react-redux';
 import {addItems, changeIsLoading, rewriteNextPageToken} from '../store/actions/searchActions';
 import {fetchByQueryAndNextPageToken} from '../api/youtubeApi';
+import {RootState} from '../store/reducers';
 
 const Search: React.FC = () => {
   const dispatch = useDispatch();
-  // @ts-ignore
-  const {items, nextPageToken, currentQuery, isLoading} = useSelector(({search}) => search);
-  // @ts-ignore
-  const {bookmarks} = useSelector(({bookmark}) => bookmark);
+  const {items, nextPageToken, currentQuery, isLoading} = useSelector(({search}: RootState) => search);
+  const {bookmarks} = useSelector(({bookmark}: RootState) => bookmark);
 
   const addMoreHandler = () => {
     dispatch(changeIsLoading(true));
@@ -33,10 +32,10 @@ const Search: React.FC = () => {
           isBookmark={bookmarks.has(item.id.videoId)}
         />
       ))}
-      {items.length !== 0 && isLoading === false &&
+      {items.length !== 0 && !isLoading &&
         <Button className='button--load-more' clickHandler={addMoreHandler}>Загрузить ещё...</Button>
       }
-      {isLoading === true && <Loader />}
+      {isLoading && <Loader />}
     </>
   );
 };

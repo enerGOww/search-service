@@ -1,5 +1,5 @@
 import React from 'react';
-import {navItem} from '../consts';
+import {navItem} from '../types';
 import {Link} from 'react-router-dom';
 
 const NavBar: React.FC<{navItems: navItem[]}> = ({navItems}) => {

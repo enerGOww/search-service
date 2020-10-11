@@ -1,8 +1,8 @@
 import {ADD_TO_BOOKMARK, DELETE_FROM_BOOKMARK} from "../actionTypes";
 import {BookmarkAction} from './actionTypes';
-import {bookmark} from '../../types';
+import {IBookmark} from '../../types';
 
-export const addToBookmark = (item: bookmark): BookmarkAction => ({
+export const addToBookmark = (item: IBookmark): BookmarkAction => ({
   type: ADD_TO_BOOKMARK,
   payload: item
 });

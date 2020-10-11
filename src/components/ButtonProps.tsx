@@ -1,12 +1,12 @@
 import React from 'react';
 
-type button = {
+type ButtonProps = {
   children: string,
   clickHandler: () => void,
   className?: string
 }
 
-const Button = ({ children , clickHandler, className= ''}: button) => {
+const Button = ({ children , clickHandler, className= ''}: ButtonProps) => {
   return (
     <button className={`button ${className}`} onClick={() => clickHandler()}>{children}</button>
   );

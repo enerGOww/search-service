@@ -2,16 +2,13 @@ import React from 'react';
 import {convertDateToNormalFormat} from '../helpers';
 import {useDispatch} from 'react-redux';
 import {addToBookmark, deleteFromBookmark} from '../store/actions/bookmarkActions';
+import {IBookmark} from '../types';
 
-type CardComponent = {
-  id: string,
-  publishedAt: string,
-  title: string,
-  imgSrc: string,
+interface CardComponentProps extends IBookmark{
   isBookmark: boolean
 }
 
-const Card = ({id, publishedAt, title, imgSrc, isBookmark}: CardComponent) => {
+const Card = ({id, publishedAt, title, imgSrc, isBookmark}: CardComponentProps) => {
   const dispatch = useDispatch();
   const [isActive, setActive] = React.useState(isBookmark);
 

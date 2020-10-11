@@ -5,12 +5,11 @@ import {changeIsLoading, rewriteItems, rewriteNextPageToken} from "../store/acti
 import {fetchByQuery} from '../api/youtubeApi';
 
 const GlobalSearch: React.FC = () => {
-  const inputRef = React.useRef(null);
+  const inputRef = React.useRef<HTMLInputElement>(null!);
   const dispatch = useDispatch();
 
   const clickHandler = () => {
     dispatch(changeIsLoading(true));
-    // @ts-ignore
     const query: string = inputRef.current.value;
     fetchByQuery(query)
       .then((response) => response.json())

@@ -1,8 +1,8 @@
-import {bookmark} from '../../types';
+import {IBookmark} from '../../types';
 
 
 export type BookmarkState = {
-  bookmarks: Map<string, bookmark>
+  bookmarks: Map<string, IBookmark>
 }
 
 export type SearchState = {

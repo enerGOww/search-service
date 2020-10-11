@@ -6,12 +6,12 @@ import {
   REWRITE_NEXT_PAGE_TOKEN,
   CHANGE_IS_LOADING
 } from '../actionTypes';
-import {bookmark} from '../../types';
+import {IBookmark} from '../../types';
 
 
 interface IAddToBookmark {
   type: typeof ADD_TO_BOOKMARK,
-  payload: bookmark
+  payload: IBookmark
 }
 
 interface IDeleteFromBookmark {

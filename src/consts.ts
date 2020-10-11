@@ -1,7 +1,4 @@
-export type navItem = {
-  title: string,
-  linkTo: string
-}
+import {navItem} from './types';
 
 export const navItems: navItem[] = [
   {title: 'Результаты Поиска', linkTo: '/'},
@@ -12,4 +9,4 @@ export const bookmarksLocalStorageKey: string = 'bookmarks';
 
 export const apiUrl: string = 'https://www.googleapis.com/youtube/v3/search';
 export const maxResultsResponse: number = 10;
-export const apiKey: string = 'AIzaSyCZh9uEI9UmLtr33tykfU2O-OjS44Gq1-Y';
+export const apiKey: string = process.env.REACT_APP_NOT_SECRET_CODE || '';
