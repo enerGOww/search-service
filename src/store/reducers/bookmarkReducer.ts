@@ -1,13 +1,14 @@
-import {AnyAction, Reducer} from 'redux';
 import {ADD_TO_BOOKMARK, DELETE_FROM_BOOKMARK} from '../actionTypes';
 import {bookmarksLocalStorageKey} from '../../consts';
 import {getStorageDataByKey, objectToMap, updateStorageByKeyAndState} from '../../helpers';
+import {BookmarkAction} from '../actions/actionTypes';
+import {BookmarkState} from './reducerTypes';
 
-const initialState = {
+const initialState: BookmarkState = {
   bookmarks: objectToMap(getStorageDataByKey(bookmarksLocalStorageKey))
 }
 
-const bookmarkReducer: Reducer = (state = initialState, action: AnyAction) => {
+const bookmarkReducer = (state = initialState, action: BookmarkAction): BookmarkState => {
   switch (action.type) {
     case ADD_TO_BOOKMARK: {
       const oldState = {...state};

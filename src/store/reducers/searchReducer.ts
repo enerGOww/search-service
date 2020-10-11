@@ -1,14 +1,15 @@
-import {AnyAction, Reducer} from 'redux';
 import {ADD_ITEMS, CHANGE_IS_LOADING, REWRITE_ITEMS, REWRITE_NEXT_PAGE_TOKEN} from '../actionTypes';
+import {SearchAction} from '../actions/actionTypes';
+import {SearchState} from './reducerTypes';
 
-const initialState = {
+const initialState: SearchState = {
   items: [],
   nextPageToken: '',
   currentQuery: '',
   isLoading: false
 };
 
-const searchReducer: Reducer = (state = initialState, action: AnyAction) => {
+const searchReducer = (state = initialState, action: SearchAction): SearchState => {
   switch (action.type) {
     case REWRITE_ITEMS: {
       return {

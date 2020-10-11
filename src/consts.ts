@@ -12,4 +12,4 @@ export const bookmarksLocalStorageKey: string = 'bookmarks';
 
 export const apiUrl: string = 'https://www.googleapis.com/youtube/v3/search';
 export const maxResultsResponse: number = 10;
-export const apiKey = 'AIzaSyCZh9uEI9UmLtr33tykfU2O-OjS44Gq1-Y';
+export const apiKey: string = 'AIzaSyCZh9uEI9UmLtr33tykfU2O-OjS44Gq1-Y';
