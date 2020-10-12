@@ -1,8 +1,8 @@
-import {navItem} from './types';
+import { navItem } from './types';
 
 export const navItems: navItem[] = [
-  {title: 'Результаты Поиска', linkTo: '/'},
-  {title: 'Закладки', linkTo: '/bookmarks'},
+  { title: 'Результаты Поиска', linkTo: '/' },
+  { title: 'Закладки', linkTo: '/bookmarks' },
 ];
 
 export const bookmarksLocalStorageKey: string = 'bookmarks';

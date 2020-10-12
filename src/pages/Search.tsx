@@ -1,14 +1,16 @@
 import React from 'react';
-import {Card, Button, Loader} from '../components';
-import {useSelector, useDispatch} from 'react-redux';
-import {addItems, changeIsLoading, rewriteNextPageToken} from '../store/actions/searchActions';
-import {fetchByQueryAndNextPageToken} from '../api/youtubeApi';
-import {RootState} from '../store/reducers';
+import { useSelector, useDispatch } from 'react-redux';
+import { Card, Button, Loader } from '../components';
+import { addItems, changeIsLoading, rewriteNextPageToken } from '../store/actions/searchActions';
+import { fetchByQueryAndNextPageToken } from '../api/youtubeApi';
+import { RootState } from '../store/reducers';
 
 const Search: React.FC = () => {
   const dispatch = useDispatch();
-  const {items, nextPageToken, currentQuery, isLoading} = useSelector(({search}: RootState) => search);
-  const {bookmarks} = useSelector(({bookmark}: RootState) => bookmark);
+  const {
+    items, nextPageToken, currentQuery, isLoading,
+  } = useSelector(({ search }: RootState) => search);
+  const { bookmarks } = useSelector(({ bookmark }: RootState) => bookmark);
 
   const addMoreHandler = () => {
     dispatch(changeIsLoading(true));
@@ -17,8 +19,8 @@ const Search: React.FC = () => {
       .then((data) => {
         dispatch(rewriteNextPageToken(data.nextPageToken));
         dispatch(addItems(data.items));
-      })
-  }
+      });
+  };
 
   return (
     <>
@@ -32,9 +34,8 @@ const Search: React.FC = () => {
           isBookmark={bookmarks.has(item.id.videoId)}
         />
       ))}
-      {items.length !== 0 && !isLoading &&
-        <Button className='button--load-more' clickHandler={addMoreHandler}>Загрузить ещё...</Button>
-      }
+      {items.length !== 0 && !isLoading
+        && <Button className="button--load-more" clickHandler={addMoreHandler}>Загрузить ещё...</Button>}
       {isLoading && <Loader />}
     </>
   );

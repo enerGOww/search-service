@@ -4,10 +4,9 @@ import {
   REWRITE_ITEMS,
   ADD_ITEMS,
   REWRITE_NEXT_PAGE_TOKEN,
-  CHANGE_IS_LOADING
+  CHANGE_IS_LOADING,
 } from '../actionTypes';
-import {IBookmark, Item} from '../../types';
-
+import { IBookmark, Item } from '../../types';
 
 interface IAddToBookmark {
   type: typeof ADD_TO_BOOKMARK,

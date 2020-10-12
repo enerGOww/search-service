@@ -6,10 +6,8 @@ type ButtonProps = {
   className?: string
 }
 
-const Button = ({ children , clickHandler, className= ''}: ButtonProps) => {
-  return (
-    <button className={`button ${className}`} onClick={() => clickHandler()}>{children}</button>
-  );
-};
+const Button = ({ children, clickHandler, className = '' }: ButtonProps) => (
+  <button className={`button ${className}`} onClick={() => clickHandler()}>{children}</button>
+);
 
 export default Button;
