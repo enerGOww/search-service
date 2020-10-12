@@ -9,7 +9,7 @@
 /coverage
 
 # IDE
-.idea
+/.idea
 
 # production
 /build
