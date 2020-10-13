@@ -5,6 +5,7 @@ import {
   ADD_ITEMS,
   REWRITE_NEXT_PAGE_TOKEN,
   CHANGE_IS_LOADING,
+  REWRITE_BOOKMARK
 } from '../actionTypes';
 import { IBookmark, Item } from '../../types';
 
@@ -16,6 +17,11 @@ interface IAddToBookmark {
 interface IDeleteFromBookmark {
   type: typeof DELETE_FROM_BOOKMARK,
   payload: string
+}
+
+interface IRewriteBookmark {
+  type: typeof REWRITE_BOOKMARK,
+  payload: Map<string, IBookmark>
 }
 
 interface IRewriteItems {
@@ -38,5 +44,5 @@ interface IChangeIsLoading {
   payload: boolean
 }
 
-export type BookmarkAction = IAddToBookmark | IDeleteFromBookmark;
+export type BookmarkAction = IAddToBookmark | IDeleteFromBookmark | IRewriteBookmark;
 export type SearchAction = IRewriteItems | IAddItems | IRewriteNextPageToken | IChangeIsLoading;

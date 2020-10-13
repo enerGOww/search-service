@@ -1,4 +1,4 @@
-import { ADD_TO_BOOKMARK, DELETE_FROM_BOOKMARK } from '../actionTypes';
+import { ADD_TO_BOOKMARK, DELETE_FROM_BOOKMARK, REWRITE_BOOKMARK } from '../actionTypes';
 import { bookmarksLocalStorageKey } from '../../consts';
 import { getStorageDataByKey, objectToMap, updateStorageByKeyAndState } from '../../helpers';
 import { BookmarkAction } from '../actions/actionTypes';
@@ -27,6 +27,14 @@ const bookmarkReducer = (state = initialState, action: BookmarkAction): Bookmark
         ...state,
         bookmarks: oldState.bookmarks,
       };
+    }
+    case REWRITE_BOOKMARK: {
+      const oldState = { ...state };
+      oldState.bookmarks = action.payload
+      return {
+        ...state,
+        bookmarks: oldState.bookmarks
+      }
     }
     default:
       return state;
